@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fibonacci</title>
+  <style>
+    .rect {
+      background-color: green;
+    }
+  </style>  
+</head>
+<body>
+  <div>
+    <input type="range" id="fibonacci" name="fibonacci" value="2" min="0" max="20">
+    <label for="fibonacci">Fibonacci: <span id="value">2</span></label>
+  </div>
+  <main>
+    
+  </main>
+  <script type="module">
+    import { fibonacci } from './fibonacci.js';
+    
+    const renderRect = (v) => {
+      let main = document.querySelector('main');
+      while (main.firstChild) {
+        main.removeChild(main.firstChild);
+      }
+
+      for (let i = 0; i <= v; i++) {
+        let newDiv = document.createElement("div");
+        let w = fibonacci(i);
+        newDiv.classList.add('rect');
+        newDiv.style.width = `${w}px`;
+        newDiv.style.height = `${w}px`;
+        newDiv.style.filter = `hue-rotate(${i/20}turn)`;
+        main.appendChild(newDiv);
+      }
+    }
+    
+    const handleInput = () => {
+      let v = parseInt(document.getElementById('fibonacci').value);
+      document.getElementById('value').innerText = v;
+      renderRect(v);
+    };
+
+    handleInput();
+    document.getElementById('fibonacci').addEventListener('input', handleInput);
+
+  </script>
+</body>
+</html>

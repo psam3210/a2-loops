@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FizzBuzz</title>
+</head>
+<body>
+  <div>
+    <input type="range" id="fizzbuzz" name="fizzbuzz" value="1" min="1" max="500">
+    <label for="fizzbuzz">FizzBuzz: <span id="value">1</span></label>
+  </div>
+  <main>
+    
+  </main>
+  <script type="module">
+    import { fizzBuzz } from './fizzbuzz.js';
+    
+    const renderFizzBuzz = (v) => {
+      let main = document.querySelector('main');
+      while (main.firstChild) {
+        main.removeChild(main.firstChild);
+      }
+
+      let arr = fizzBuzz(v);
+      arr.forEach((el) => {
+        let newDiv = document.createElement("div");
+        newDiv.innerText = el;
+        main.appendChild(newDiv);
+      });
+    }
+    
+    const handleInput = () => {
+      let v = parseInt(document.getElementById('fizzbuzz').value);
+      document.getElementById('value').innerText = v;
+      renderFizzBuzz(v);
+    };
+
+    handleInput();
+    document.getElementById('fizzbuzz').addEventListener('input', handleInput);
+
+  </script>
+</body>
+</html>

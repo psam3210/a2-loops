@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Albers</title>
+  <style>
+    main {
+      width: 100%;
+      max-width: 700px;
+    }
+    main, .square {
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      margin-bottom: 5%;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <input type="range" id="albers" name="albers" value="1" min="1" max="20">
+    <label for="albers">Number of squares: <span id="value">1</span></label>
+  </div>
+  <main>
+    
+  </main>
+  <script type="module">
+    import { squares } from './albers.js';
+    
+    const renderSquares = (v) => {
+      let main = document.querySelector('main');
+      while (main.firstChild) {
+        main.removeChild(main.firstChild);
+      }
+
+      let parentDiv = main;
+
+      for (let i = 0; i < v; i++) {
+        let config = squares(main.clientWidth, i);
+        
+        let newDiv = document.createElement("div");
+
+        newDiv.style.width = `${config.width}px`;
+        newDiv.style.height = `${config.width}px`;
+        newDiv.style.backgroundColor = config.color;
+        newDiv.classList.add('square');
+
+        parentDiv.appendChild(newDiv);
+        parentDiv = newDiv;
+      };
+    }
+    
+    const handleInput = () => {
+      let v = parseInt(document.getElementById('albers').value);
+      document.getElementById('value').innerText = v;
+      renderSquares(v);
+    };
+
+    handleInput();
+    document.getElementById('albers').addEventListener('input', handleInput);
+
+  </script>
+</body>
+</html>
