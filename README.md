@@ -20,7 +20,7 @@ Fn = F(n-1) + F(n-2)
 
 As part of our design explorations, we are interested in incorporating a visual representation of the Fibonacci sequence. Write the code to complete the Fibonacci sequence, taking care to handle edge cases of your for loop (when `n=0 and n=1`). The results will be displayed by creating `div`s the width and height of each Fibonacci number. 
 
-Calling `fibonacci(7)` should return `13`, for example.
+Calling `fibonacci(7)` should return `13`, for example. Calling `fibonacci(2)` should return `1`.
 
 Fun fact, you can use Fibonacci numbers to derive the Golden Ratio, which seems to be an [important element](https://knowyourmeme.com/memes/the-golden-ratio) in design.
 
@@ -30,7 +30,7 @@ Fun fact, you can use Fibonacci numbers to derive the Golden Ratio, which seems 
 
 A classic programming interview problem, FizzBuzz is based on a [childrens game](https://en.wikipedia.org/wiki/Fizz_buzz). The idea is simple. Write a program which returns an array of the first `n` numbers. If the number is divisible by `3`, replace the number with `Fizz`. If the number is divisible by `5`, replace it with `Buzz`. And if the number is divisible by BOTH `3` and `5`, replace it with `FizzBuzz`
 
-Calling `fizzBuzz(5)` should return `[1,2,'Fizz',3,4,'Buzz']`.
+Calling `fizzBuzz(5)` should return `[1,2,'Fizz',3,4,'Buzz']`.  Calling `fizzBuzz(3)` should return `[1,2,'Fizz']`.
 
 To do this assignment, you’ll need to know how to append values to an array. This is easy to do. Here’s an example:
 ```
@@ -47,9 +47,9 @@ Knowing how to use the `%` modulo operator will also be very helpful to do this.
 
 Josef Albers was most famous for his [*Homage to the Square*](https://www.moma.org/collection/works/73229) series. We’ll attempt to recreate this work by creating an array of colors to cycle through for each square, as well as the dimensions of each successive square, with the idea that each square is `.75` the size of the previous square. Importantly, we’ll be given a starting width to work off, since we want the design to be responsive to the browser.
 
-When someone calls `squares(500, 2)` they are expecting you to respond with the width of the `2`nd square (`initialWidth` of `500`) and what to color it. How you choose to color the square is up to you, but there must be some variation to it (you can toggle between two colors for example) such that consecutive squares like `squares(500,2)` and `squares(500,1)` are not colored the same. The result of this should be an object `{width: 281.25, color: '#0000ff' }`. 
+When someone calls `squares(500, 2)` they are expecting you to respond with the width of the `2`nd square (`initialWidth` of `500`) and what to color it. How you choose to color the square is up to you, but there must be some variation to it (you can toggle between two colors for example) such that consecutive squares like `squares(500,2)` and `squares(500,1)` are not colored the same. The result of calling `squares(500, 2)` should be an object `{width: 281.25, color: '#0000ff' }`. 
 
-`squares(500,1) = {width: 500, color: '#00ff00'}`
+`squares(500,1) = {width: 375, color: '#00ff00'}`
 
 `squares(500,0)` should return a width of `500`.
 
