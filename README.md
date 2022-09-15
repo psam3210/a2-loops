@@ -30,7 +30,7 @@ Fun fact, you can use Fibonacci numbers to derive the Golden Ratio, which seems 
 
 A classic programming interview problem, FizzBuzz is based on a [childrens game](https://en.wikipedia.org/wiki/Fizz_buzz). The idea is simple. Write a program which returns an array of the first `n` numbers. If the number is divisible by `3`, replace the number with `Fizz`. If the number is divisible by `5`, replace it with `Buzz`. And if the number is divisible by BOTH `3` and `5`, replace it with `FizzBuzz`
 
-Calling `fizzBuzz(5)` should return `[1,2,'Fizz',3,4,'Buzz']`.  Calling `fizzBuzz(3)` should return `[1,2,'Fizz']`.
+Calling `fizzBuzz(5)` should return `[1,2,'Fizz',4,'Buzz']`.  Calling `fizzBuzz(3)` should return `[1,2,'Fizz']`.
 
 To do this assignment, you’ll need to know how to append values to an array. This is easy to do. Here’s an example:
 ```
