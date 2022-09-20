@@ -21,6 +21,7 @@
   </main>
   <script type="module">
     import { fibonacci } from './fibonacci.js';
+    window.fibonacci = fibonacci;
     
     const renderRect = (v) => {
       let main = document.querySelector('main');

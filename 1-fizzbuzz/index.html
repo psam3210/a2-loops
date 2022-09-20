@@ -16,6 +16,7 @@
   </main>
   <script type="module">
     import { fizzBuzz } from './fizzbuzz.js';
+    window.fizzBuzz = fizzBuzz;
     
     const renderFizzBuzz = (v) => {
       let main = document.querySelector('main');

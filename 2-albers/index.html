@@ -28,6 +28,7 @@
   </main>
   <script type="module">
     import { squares } from './albers.js';
+    window.squares = squares;
     
     const renderSquares = (v) => {
       let main = document.querySelector('main');
